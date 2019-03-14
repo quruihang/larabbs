@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,328 +13,49 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
-                'id' => 1,
-                'name' => 'Summer',
-                'phone' => NULL,
-                'email' => 'summer@yousails.com',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'BegLOPHjsR',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Fugit dignissimos quae praesentium placeat ipsum.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'name' => 'Miss Maggie Becker',
-                'phone' => NULL,
-                'email' => 'hauck.arnulfo@example.com',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'rWS65u6tWj',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Repudiandae veritatis consequatur nulla doloribus quia et tenetur tenetur.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            2 => 
-            array (
-                'id' => 3,
-                'name' => 'Verlie Ankunding',
-                'phone' => NULL,
-                'email' => 'kutch.jolie@example.com',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'zBsXkKZlHW',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Enim tempora ipsam perferendis illum atque.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            3 => 
-            array (
-                'id' => 4,
-                'name' => 'Vernice Rogahn',
-                'phone' => NULL,
-                'email' => 'serenity67@example.org',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 't4dNK8ztc6',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Consequatur est libero nemo atque omnis.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'name' => 'Brad Trantow',
-                'phone' => NULL,
-                'email' => 'mdickinson@example.com',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => '4TDiA09PwH',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Laudantium maiores aut ut praesentium expedita natus sunt.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'name' => 'Gideon Kuhlman MD',
-                'phone' => NULL,
-                'email' => 'lskiles@example.org',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'Xnqbp5aOCQ',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Officia inventore illum iste ipsum molestias autem a ea.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'name' => 'Lilla Volkman PhD',
-                'phone' => NULL,
-                'email' => 'bulah02@example.org',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'YoJGJTqH1o',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Natus et libero ut nobis quis est sunt.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            7 => 
-            array (
-                'id' => 8,
-                'name' => 'Felix Jacobi',
-                'phone' => NULL,
-                'email' => 'mossie68@example.org',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => '1wUPCt0w6h',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Consequuntur in cupiditate odio et voluptatem.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'name' => 'Prof. Keanu Kiehn',
-                'phone' => NULL,
-                'email' => 'xharvey@example.org',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'MfbvQkCTvo',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Mollitia facilis omnis deserunt distinctio cumque et.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'name' => 'Jason Nienow DDS',
-                'phone' => NULL,
-                'email' => 'buckridge.shannon@example.com',
-                'password' => '$2y$10$M/pHoqmpLqKPrRxMe5fN5O5oOnXSvIoBr1SyBp2l2SJnu3Jos64ZS',
-                'remember_token' => 'JbTXHx2Tsj',
-                'created_at' => '2019-03-08 18:01:51',
-                'updated_at' => '2019-03-08 18:01:51',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Quidem totam ab aliquid qui iusto itaque et recusandae.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            10 => 
-            array (
-                'id' => 11,
-                'name' => 'Dereck Huel',
-                'phone' => NULL,
-                'email' => 'randal.schaden@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'eHpwvPJUxC',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Quam aspernatur iusto est suscipit debitis.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            11 => 
-            array (
-                'id' => 12,
-                'name' => 'Darian Jast',
-                'phone' => NULL,
-                'email' => 'hyatt.lois@example.com',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'z3mHxm3nNv',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Aliquam illum repellendus aut quis voluptates amet.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            12 => 
-            array (
-                'id' => 13,
-                'name' => 'Rupert Kub',
-                'phone' => NULL,
-                'email' => 'brennon95@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'j3yULCFlOG',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Reiciendis accusantium debitis et illo amet.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            13 => 
-            array (
-                'id' => 14,
-                'name' => 'Bernhard Bode DDS',
-                'phone' => NULL,
-                'email' => 'volkman.uriel@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'PryLokVCQa',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Animi numquam dolorum adipisci.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            14 => 
-            array (
-                'id' => 15,
-                'name' => 'April Corwin',
-                'phone' => NULL,
-                'email' => 'joshua.johnston@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'xbQ13i9AXd',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Deleniti earum hic aspernatur fugit et totam unde.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            15 => 
-            array (
-                'id' => 16,
-                'name' => 'Dr. Hannah Zieme MD',
-                'phone' => NULL,
-                'email' => 'anastasia.harvey@example.com',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'kNOPmIAsTh',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Minus cupiditate sunt voluptatibus sapiente sequi eos.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            16 => 
-            array (
-                'id' => 17,
-                'name' => 'Darrick Rodriguez',
-                'phone' => NULL,
-                'email' => 'tremblay.mattie@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'v4h1DtERhP',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Similique cum dolorem non et molestiae.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            17 => 
-            array (
-                'id' => 18,
-                'name' => 'Ramiro Hettinger',
-                'phone' => NULL,
-                'email' => 'treynolds@example.com',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'jcqz5XpDYb',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Iure ea temporibus occaecati aperiam unde vero qui dolores.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            18 => 
-            array (
-                'id' => 19,
-                'name' => 'Orion Lockman',
-                'phone' => NULL,
-                'email' => 'umuller@example.net',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'zsDHywhbux',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Non aut vero blanditiis aut omnis.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            19 => 
-            array (
-                'id' => 20,
-                'name' => 'Katarina Crona',
-                'phone' => NULL,
-                'email' => 'zwehner@example.com',
-                'password' => '$2y$10$5Lkc50KbjsppEnUauctKi.PWuGhuoPTuRp5G/H2pZRodpOPiGdvGC',
-                'remember_token' => 'bukzGss8Ry',
-                'created_at' => '2019-03-08 18:04:58',
-                'updated_at' => '2019-03-08 18:04:58',
-                'avatar' => 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-                'introduction' => 'Ipsum ea quaerat sunt.',
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-            20 => 
-            array (
-                'id' => 21,
-                'name' => 'qrh',
-                'phone' => NULL,
-                'email' => 'qrh@123.com',
-                'password' => '$2y$10$VVYl1TqllfJalHRAc5cXHuF8e8eOk5hWC6T6jZwg4LEJFwD4zfjmi',
-                'remember_token' => 'EOP89VpgCm83fJn4QtK14EGykYYz0qKr0OcOitED0K27CvP71y2Frz9c7IJQ',
-                'created_at' => '2019-03-13 15:41:30',
-                'updated_at' => '2019-03-13 15:41:30',
-                'avatar' => NULL,
-                'introduction' => NULL,
-                'notification_count' => 0,
-                'last_actived_at' => NULL,
-            ),
-        ));
-        
-        
+        // 获取 Faker 实例
+        $faker = app(Faker\Generator::class);
+
+        // 头像假数据
+        $avatars = [
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
+            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/NDnzMutoxX.png?imageView2/1/w/200/h/200',
+        ];
+
+        // 生成数据集合
+        // factory(User::class) 根据指定的 User 生成模型工厂构造器，对应加载 UserFactory.php 中的工厂设置。
+        $users = factory(User::class)
+            // times(10) 指定生成模型的数量，此处我们只需要生成 10 个用户数据。
+            ->times(10)
+            // make() 方法会将结果生成为 集合对象。
+            ->make()
+            // each() 是 集合对象 提供的 方法，用来迭代集合中的内容并将其传递到回调函数中。
+            ->each(function ($user, $index)
+            // use 是 PHP 中匿名函数提供的本地变量传递机制，匿名函数中必须通过 use 声明的引用，才能使用本地变量。
+            use ($faker, $avatars)
+            {
+                // 从头像数组中随机取出一个并赋值
+                $user->avatar = $faker->randomElement($avatars);
+            });
+
+        // 让隐藏字段可见，并将数据集合转换为数组
+        // makeVisible() 是 Eloquent 对象提供的方法，可以显示 User 模型 $hidden 属性里指定隐藏的字段，此操作确保入库时数据库不会报错。
+        $user_array = $users->makeVisible(['password', 'remember_token'])->toArray();
+
+        // 插入到数据库中
+        User::insert($user_array);
+
+        // 单独处理第一个用户的数据
+        $user = User::find(1);
+        $user->name = 'Summer';
+        $user->email = 'summer@learnku.com';
+        $user->avatar = 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
+        $user->save();
+
     }
 }
