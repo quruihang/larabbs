@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use App\Handlers\ImageUploadHandler;
 
 class UsersController extends Controller
 {
@@ -33,10 +34,21 @@ class UsersController extends Controller
     }
 
     // 保存个人信息
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
+        $data = $request->all();
+        // $data = $request->all(); 赋值 $data 变量，以便对更新数据的操作；
+
+        if ($request->avatar) {
+            $result = $uploader->save($request->avatar, 'avatars', $user->id, 362);
+            if ($result) {
+                // if ($result) 的判断是因为 ImageUploadHandler 对文件后缀名做了限定，不允许的情况下将返回 false
+                $data['avatar'] = $result['path'];
+            }
+        }
+
         // 使用『表单请求验证』（FormRequest）来验证用户提交的数据。
-        $user->update($request->all());
+        $user->update($data);
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 
