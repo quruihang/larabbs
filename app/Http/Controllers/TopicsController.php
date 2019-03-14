@@ -14,11 +14,13 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index()
-	{
-		$topics = Topic::with('user', 'category')->paginate(30);
-		return view('topics.index', compact('topics'));
-	}
+    public function index(Request $request, Topic $topic)
+    {
+        // 在话题控制器中链式调用定义的方法 withOrder()
+        // $request->order 是获取 URI http://larabbs.test/topics?order=recent 中的 order 参数。
+        $topics = $topic->withOrder($request->order)->paginate(20);
+        return view('topics.index', compact('topics'));
+    }
 
     public function show(Topic $topic)
     {
