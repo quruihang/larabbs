@@ -9,6 +9,17 @@ use App\Handlers\ImageUploadHandler;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        // Laravel 提供的 Auth 中间件在过滤指定动作时，如该用户未通过身份验证（未登录用户），将会被重定向到登录页面
+        // 使用身份验证（Auth）中间件来过滤未登录用户的 edit, update 动作
+        // 在 __construct 方法中调用了 middleware 方法，该方法接收两个参数，第一个为中间件的名称，第二个为要进行过滤的动作。
+        // 通过 except 方法来设定 指定动作 不使用 Auth 中间件进行过滤，意为 —— 除了此处指定的动作以外，所有其他动作都必须登录用户才能访问，类似于黑名单的过滤机制。
+        // 相反的还有 only 白名单方法，将只过滤指定动作。我们提倡在控制器 Auth 中间件使用中，首选 except 方法，这样的话，当新增一个控制器方法时，默认是安全的，此为最佳实践。
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
     // 个人页面的展示
     public function show(User $user)
     {
@@ -26,6 +37,7 @@ class UsersController extends Controller
     // 编辑个人信息
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         /**
         edit() 方法接受 $user 用户作为传参，也就是说当 URL 是 http://larabbs.test/users/1/edit 时，读取的是 ID 为 1 的用户。这里使用的是与 show() 方法一致的 『隐性路由模型绑定』 开发范式。
         view() 方法加载了 resources/views/users/edit.blade.php 模板，并将用户实例作为变量传置于模板中。
@@ -36,6 +48,7 @@ class UsersController extends Controller
     // 保存个人信息
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
+        $this->authorize('update', $user);
         $data = $request->all();
         // $data = $request->all(); 赋值 $data 变量，以便对更新数据的操作；
 
