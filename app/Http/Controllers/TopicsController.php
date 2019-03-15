@@ -13,6 +13,7 @@ class TopicsController extends Controller
 {
     public function __construct()
     {
+         // 对除了 index() 和 show() 以外的方法使用 auth 中间件进行认证
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
