@@ -11,10 +11,10 @@
     <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
     <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
 
-<!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-{{--在主要布局文件中种下锚点 styles--}}
-@yield('styles')
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{--在主要布局文件中种下锚点 styles--}}
+    @yield('styles')
 </head>
 
 <body>
@@ -32,9 +32,9 @@
     @include('layouts._footer')
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-{{--在主要布局文件中种下锚点 scripts--}}
-@yield('scripts')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{--在主要布局文件中种下锚点 scripts--}}
+    @yield('scripts')
 </body>
 </html>

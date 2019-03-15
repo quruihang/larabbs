@@ -19,6 +19,12 @@ class Topic extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function replies()
+    {
+        // 一篇帖子下有多条回复
+        return $this->hasMany(Reply::class);
+    }
+
     /**
      * 这里我们使用了 Laravel 本地作用域 。
      * 本地作用域允许我们定义通用的约束集合以便在应用中复用。
@@ -59,4 +65,5 @@ class Topic extends Model
     {
         return route('topics.show', array_merge([$this->id, $this->slug], $params));
     }
+
 }

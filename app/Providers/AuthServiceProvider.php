@@ -16,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
     // AuthServiceProvider 包含了一个 policies 属性，该属性用于将各种模型对应到管理它们的授权策略上。
     // 为用户模型 User 指定授权策略 UserPolicy。
     protected $policies = [
+		 \App\Models\Reply::class => \App\Policies\ReplyPolicy::class,
 		 \App\Models\Topic::class => \App\Policies\TopicPolicy::class,
         'App\Model' => 'App\Policies\ModelPolicy',
         \App\Models\User::class  => \App\Policies\UserPolicy::class,
