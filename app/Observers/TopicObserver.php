@@ -32,11 +32,25 @@ class TopicObserver
         // make_excerpt() 是自定义的辅助方法，需要在 helpers.php 文件中添加
         $topic->excerpt = make_excerpt($topic->body);
 
-        // 如 slug 字段无内容，即使用翻译器对 title 进行翻译
+        /*// 如 slug 字段无内容，即使用翻译器对 title 进行翻译
         if ( ! $topic->slug) {
 
             // app() 允许我们使用 Laravel 服务容器 ，此处我们用来生成 SlugTranslateHandler 实例
             // $topic->slug = app(SlugTranslateHandler::class)->translate($topic->title);
+
+            // 推送任务到队列
+            dispatch(new TranslateSlug($topic));
+        }*/
+    }
+
+    public function saved(Topic $topic)
+    {
+        /*
+         * 模型监控器的 saved() 方法对应 Eloquent 的 saved 事件，此事件发生在创建和编辑时、数据入库以后。
+         * 在 saved() 方法中调用，确保了我们在分发任务时，$topic->id 永远有值。
+         */
+        // 如 slug 字段无内容，即使用翻译器对 title 进行翻译
+        if ( ! $topic->slug) {
 
             // 推送任务到队列
             dispatch(new TranslateSlug($topic));
