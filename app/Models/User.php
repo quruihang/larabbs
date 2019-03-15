@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
 //    use Notifiable;
     use Notifiable {
+        // 给 notify方法 一个改变了访问控制的别名
+        // 原版 notify 的访问控制则没有发生变化
         notify as protected laravelNotify;
     }
 
