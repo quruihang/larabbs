@@ -32,6 +32,10 @@
     @include('layouts._footer')
 </div>
 
+    @if (app()->isLocal())
+        @include('sudosu::user-selector')
+    @endif
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     {{--在主要布局文件中种下锚点 scripts--}}
