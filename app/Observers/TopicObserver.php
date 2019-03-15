@@ -18,4 +18,11 @@ class TopicObserver
     {
         //
     }
+
+    // 在 Topic 模型保存时触发的 saving 事件中，对 excerpt 字段进行赋值
+    public function saving(Topic $topic)
+    {
+        // make_excerpt() 是自定义的辅助方法，需要在 helpers.php 文件中添加
+        $topic->excerpt = make_excerpt($topic->body);
+    }
 }
