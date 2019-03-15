@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Reply;
+use App\Notifications\TopicReplied;
 
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
@@ -23,6 +24,11 @@ class ReplyObserver
     // 监控 created 事件，当 Elequont 模型数据成功创建时，created 方法将会被调用。
     public function created(Reply $reply)
     {
-        $reply->topic->increment('reply_count', 1);
+        $topic = $reply->topic;
+        $topic->increment('reply_count', 1);
+
+        // 默认的 User 模型中使用了 trait —— Notifiable，它包含着一个可以用来发通知的方法 notify() ，此方法接收一个通知实例做参数。
+        // 通知作者话题被回复了
+        $topic->user->notify(new TopicReplied($reply));
     }
 }
