@@ -56,4 +56,12 @@ class TopicObserver
             dispatch(new TranslateSlug($topic));
         }
     }
+
+    public function deleted(Topic $topic)
+    {
+        // 在模型监听器中，数据库操作需避免再次触发 Eloquent 事件，以免造成联动逻辑冲突。
+        // 要使用 DB 类进行操作。
+        // 当话题被删除的时候,删除话题下的所有评论
+        \DB::table('replies')->where('topic_id', $topic->id)->delete();
+    }
 }
