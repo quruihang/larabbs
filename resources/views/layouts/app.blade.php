@@ -12,6 +12,8 @@
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--在主要布局文件中种下锚点 styles--}}
+@yield('styles')
 </head>
 
 <body>
@@ -31,5 +33,7 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+{{--在主要布局文件中种下锚点 scripts--}}
+@yield('scripts')
 </body>
 </html>
